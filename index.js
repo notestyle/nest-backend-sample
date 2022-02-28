@@ -3,6 +3,11 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
+// const, var, let
+// for, while
+// if else switch
+// JSON, object
+
 /**
  * GET - Ямар нэгэн жагсаалт харуулах буцаахад
  * POST - Login, Шинээр дата хадгалахад ашиглана
