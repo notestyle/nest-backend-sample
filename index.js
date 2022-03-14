@@ -1,48 +1,31 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 
 const app = express();
-const port = 3000;
+app.use(bodyParser());
 
-// const, var, let
-// for, while
-// if else switch
-// JSON, object
+const users = [
+  {
+    email: "admin@gmail.com",
+    name: "Uguumur",
+    password: "123",
+  },
+  {
+    email: "test@gmail.com",
+    name: "Bold",
+    password: "123",
+  },
+];
 
-/**
- * GET - Ямар нэгэн жагсаалт харуулах буцаахад
- * POST - Login, Шинээр дата хадгалахад ашиглана
- * PUT - Update, Засвар хийхэд ашиглана
- * DELETE - Устгахад
- */
+app.post("/login", function (req, res) {
+  const { email, password } = req.body;
 
-let students = [];
-
-// http://localhost:3000/student [GET]
-app.get("/student", (req, res) => {
-  // 1. query parameter
-  // req.query.
-  res.send(students);
+  const found = users.filter((x) => x.email == email && x.password == password);
+  if (found && found.length > 0) {
+    res.send("Success");
+  } else {
+    res.status(401).send("Username or password incorrect!");
+  }
 });
 
-// http://localhost:3000/student [POST]
-app.post("/student", (req, res) => {
-  students.push({ name: "Test" });
-  res.send("Added");
-});
-
-// http://localhost:3000/student [PUT]
-app.put("/student", (req, res) => {
-  const found = students.find((x) => x.name == "Test");
-  found.name = "Test 2";
-  res.send("Updated");
-});
-
-// http://localhost:3000/student [DELETE]
-app.delete("/student", (req, res) => {
-  students = [];
-  res.send("Deleted");
-});
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+app.listen(3000);

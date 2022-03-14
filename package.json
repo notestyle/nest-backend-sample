@@ -1,15 +1,23 @@
 {
-  "name": "project_10a",
+  "name": "nest-backend-sample",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Uguumur",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/notestyle/nest-backend-sample.git"
+  },
+  "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/notestyle/nest-backend-sample/issues"
+  },
+  "homepage": "https://github.com/notestyle/nest-backend-sample#readme",
   "dependencies": {
-    "express": "^4.17.2",
-    "nodemon": "^2.0.15"
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3"
   }
 }
