@@ -7,6 +7,7 @@ login.html файлыг browser дээрээ нээнэ
 run
 
 ```ssh
+cd api
 npm i
 npm run dev
 ```
